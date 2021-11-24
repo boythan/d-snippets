@@ -26,10 +26,21 @@
     "description": "Creates input component in d-component-library"
   },
 
+  "buttonComponent": {
+    "prefix": "dbt",
+    "body": [
+      "<Button>",
+      "\tvariation='${0:primary}'",
+      "\tonClick={()=>{}}",
+      "</Button>"
+    ],
+    "description": "Creates button component in d-component-library"
+  },
+
   "progressComponent": {
     "prefix": "dpr",
     "body": [
-      "<Progress.show(",
+      "Progress.show(",
       "\t{ method: $0, params: [${1:input}] },",
       "\t(res: any) => {}",
       ");"

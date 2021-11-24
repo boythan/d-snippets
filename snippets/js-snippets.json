@@ -75,7 +75,7 @@
       "\tinitialValues: {}",
       "\tvalidateOnChange: false,",
       "\tvalidateOnBlur: false,",
-      "\tvalidationSchema: ${2},",
+      "\tvalidationSchema: ${2:schema},",
       "\tonSubmit: (values) => {},",
       "/>"
     ],

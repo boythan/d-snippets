@@ -19,6 +19,7 @@
     "prefix": "ima",
     "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
   },
+
   "exportDefault": {
     "prefix": "exp",
     "body": "export default $1$0"
@@ -253,11 +254,13 @@
     "body": ["const ${1:contextName} = React.createContext()", ""],
     "description": "Create React context"
   },
+
   "createRef": {
     "prefix": "cref",
     "body": ["this.${1:refName}Ref = React.createRef()", ""],
     "description": "Create ref statement used inside constructor"
   },
+
   "forwardRef": {
     "prefix": "fref",
     "body": ["const ref = React.createRef()", ""],
@@ -395,6 +398,7 @@
     ],
     "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
   },
+
   "reactNativeFunctionalExportComponent": {
     "prefix": "rnfe",
     "body": [
@@ -413,6 +417,7 @@
       ""
     ]
   },
+
   "reactNativeFunctionalExportComponentWithStyles": {
     "prefix": "rnfes",
     "body": [
@@ -438,6 +443,7 @@
     "prefix": "imrn",
     "body": "import { ${1:moduleName} } from 'react-native'"
   },
+
   "reactNativeStyles": {
     "prefix": "rnstyle",
     "body": ["const styles = StyleSheet.create({", "\t${1:style}", "})", ""]
@@ -452,6 +458,7 @@
     "prefix": "graphql",
     "body": ["import { compose, graphql } from 'react-apollo'", ""]
   },
+
   "exportGraphQL": {
     "prefix": "expgql",
     "body": [
@@ -467,6 +474,7 @@
       "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"
     ]
   },
+
   "useEffect": {
     "prefix": "useEffect",
     "body": [
@@ -478,16 +486,19 @@
       "}, [${3:input}])"
     ]
   },
+
   "useContext": {
     "prefix": "useContext",
     "body": ["const ${1:context} = useContext(${2:contextValue})"]
   },
+
   "useReducer": {
     "prefix": "useReducer",
     "body": [
       "const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState}, ${3:init})"
     ]
   },
+
   "useCallback": {
     "prefix": "useCallback",
     "body": [
@@ -499,14 +510,17 @@
       ")"
     ]
   },
+
   "useMemo": {
     "prefix": "useMemo",
     "body": ["useMemo(() => ${1:function}, ${2:input})"]
   },
+
   "useRef": {
     "prefix": "useRef",
     "body": ["const ${1:ref} = useRef(${2:initialValue})"]
   },
+
   "useImperativeHandle": {
     "prefix": "useImperativeHandle",
     "body": [
@@ -519,10 +533,12 @@
       ")"
     ]
   },
+
   "useDebugValue": {
     "prefix": "useDebugValue",
     "body": ["useDebugValue(${1:value})"]
   },
+
   "useLayoutEffect": {
     "prefix": "useLayoutEffect",
     "body": [
@@ -534,16 +550,38 @@
       "}, [${3:input}])"
     ]
   },
+
   "useSelector": {
     "prefix": "useSelector",
     "body": ["const ${1:state} = useSelector(state => state.${1:state})"]
   },
+
   "useDispatch": {
     "prefix": "useDispatch",
     "body": ["const dispatch = useDispatch()"]
   },
-  "typeof": {
-    "prefix": "tpf",
-    "body": ["typeof ${0}"]
+
+  "yupObjectSchema": {
+    "prefix": "yupObjectSchema",
+    "body": [
+      "export const ${0:schema} = Yup.object().shape({",
+      "\t${1:field}: Yup.string().required('Required')",
+      "});"
+    ]
+  },
+
+  "yupShapeSchema": {
+    "prefix": "yupShapeSchema",
+    "body": ["export const ${1:schema} = Yup.lazy((value) => {", "\t", "});"]
+  },
+
+  "divTag": {
+    "prefix": "div",
+    "body": ["<div className={'${1}'}>{${0}}</div>"]
+  },
+
+  "textTag": {
+    "prefix": "text",
+    "body": ["<text className={'${1}'}>{${0}}</text>"]
   }
 }
