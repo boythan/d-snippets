@@ -4,13 +4,17 @@ exports.deactivate = exports.activate = void 0;
 const vscode = require("vscode");
 const jsSnippets = require("../snippets/snippets.json");
 const tsSnippets = require("../snippets/ts-snippets.json");
+const dCompSnippets = require("../snippets/d-component-snippets.json");
 const convertSnippetArrayToString = (snippetArray) => snippetArray.join("\n");
 function activate(context) {
     const { commands: { registerCommand }, window: { showQuickPick, activeTextEditor }, } = vscode;
     const disposable = registerCommand("extension.dSnippetSearch", async () => {
         const javascriptSnippets = Object.entries(jsSnippets);
         const typescriptSnippets = Object.entries(tsSnippets);
-        const snippetsArray = javascriptSnippets.concat(typescriptSnippets);
+        const dComponentSnippets = Object.entries(dCompSnippets);
+        const snippetsArray = javascriptSnippets
+          .concat(typescriptSnippets)
+          .concat(dComponentSnippets);
         const items = snippetsArray.map(([shortDescription, { prefix, body, description }], index) => {
             const value = typeof prefix === "string" ? prefix : prefix[0];
             return {
