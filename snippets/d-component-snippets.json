@@ -1,0 +1,28 @@
+{
+  "selectComponent": {
+    "prefix": "select",
+    "body": [
+      "<Select",
+      "\tclassName=''",
+      "\tvalue={}",
+      "\terror={}",
+      "\tonChange={(valueId)=>{}}",
+      "/>"
+    ],
+    "description": "Creates select component in d-component-library"
+  },
+
+  "inputComponent": {
+    "prefix": "select",
+    "body": [
+      "<InputText",
+      "\tclassName=''",
+      "\tvalue={}",
+      "\terror={}",
+      "\tname=''",
+      "\tonChange={(valueId)=>{}}",
+      "/>"
+    ],
+    "description": "Creates input component in d-component-library"
+  }
+}

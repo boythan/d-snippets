@@ -2,15 +2,25 @@
   "name": "d-snippets",
   "displayName": "d-snippets",
   "description": "React's snippet",
-  "version": "0.0.2",
+  "version": "0.0.5",
+  "publisher": "vinhdxk57",
   "engines": {
     "vscode": "^1.62.0"
   },
   "categories": [
     "Snippets"
   ],
+  "icon": "images/logo.png",
   "activationEvents": [
     "onCommand:extension.dSnippetSearch"
+  ],
+  "keywords": [
+    "snippets",
+    "react",
+    "redux",
+    "react-native",
+    "javascript",
+    "typescript"
   ],
   "main": "./out/index.js",
   "contributes": {
