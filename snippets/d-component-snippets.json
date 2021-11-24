@@ -1,6 +1,6 @@
 {
   "selectComponent": {
-    "prefix": "select",
+    "prefix": "ds",
     "body": [
       "<Select",
       "\tclassName=''",
@@ -13,7 +13,7 @@
   },
 
   "inputComponent": {
-    "prefix": "select",
+    "prefix": "dit",
     "body": [
       "<InputText",
       "\tclassName=''",

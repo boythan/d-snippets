@@ -2,7 +2,7 @@
   "name": "d-snippets",
   "displayName": "d-snippets",
   "description": "React's snippet",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher": "vinhdxk57",
   "engines": {
     "vscode": "^1.62.0"
@@ -14,6 +14,10 @@
   "activationEvents": [
     "onCommand:extension.dSnippetSearch"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boythan/d-snippets.git"
+  },
   "keywords": [
     "snippets",
     "react",
@@ -54,6 +58,14 @@
       {
         "language": "typescriptreact",
         "path": "./snippets/ts-snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/d-component-snippets.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/d-component-snippets.json"
       }
     ]
   },
