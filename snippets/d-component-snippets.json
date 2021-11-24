@@ -3,7 +3,7 @@
     "prefix": "ds",
     "body": [
       "<Select",
-      "\tclassName=''",
+      "\tclassName='$0'",
       "\tvalue={}",
       "\terror={}",
       "\tonChange={(valueId)=>{}}",
@@ -16,7 +16,7 @@
     "prefix": "dit",
     "body": [
       "<InputText",
-      "\tclassName=''",
+      "\tclassName='$0'",
       "\tvalue={}",
       "\terror={}",
       "\tname=''",
@@ -24,5 +24,16 @@
       "/>"
     ],
     "description": "Creates input component in d-component-library"
+  },
+
+  "progressComponent": {
+    "prefix": "dpr",
+    "body": [
+      "<Progress.show(",
+      "\t{ method: $0, params: [${1:input}] },",
+      "\t(res: any) => {}",
+      ");"
+    ],
+    "description": "Creates progress component in d-component-library"
   }
 }

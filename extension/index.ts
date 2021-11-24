@@ -1,7 +1,9 @@
 import * as vscode from "vscode";
 
-const jsSnippets = require("../snippets/snippets.json");
+const snippets = require("../snippets/snippets.json");
 const tsSnippets = require("../snippets/ts-snippets.json");
+const jsSnippets = require("../snippets/js-snippets.json");
+const dCompSnippets = require("../snippets/d-component-snippets.json");
 
 type Snippet = {
   body: Array<string> | string;
@@ -19,10 +21,14 @@ export function activate(context: vscode.ExtensionContext) {
   } = vscode;
 
   const disposable = registerCommand("extension.dSnippetSearch", async () => {
-    const javascriptSnippets = Object.entries(jsSnippets as Array<Snippet>);
+    const reactSnippets = Object.entries(snippets as Array<Snippet>);
     const typescriptSnippets = Object.entries(tsSnippets as Array<Snippet>);
-    const snippetsArray: Array<[string, Snippet]> =
-      javascriptSnippets.concat(typescriptSnippets);
+    const javascriptSnippets = Object.entries(jsSnippets as Array<Snippet>);
+    const dComponentSnippets = Object.entries(dCompSnippets as Array<Snippet>);
+    const snippetsArray: Array<[string, Snippet]> = reactSnippets
+      .concat(typescriptSnippets)
+      .concat(dComponentSnippets)
+      .concat(javascriptSnippets);
 
     const items = snippetsArray.map(
       ([shortDescription, { prefix, body, description }], index) => {

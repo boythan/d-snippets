@@ -231,25 +231,6 @@
     "description": "Creates a React component class with ES7 module system"
   },
 
-  "reactFunctionalExportComponent": {
-    "prefix": "rfce",
-    "body": [
-      "import React from 'react'",
-      "",
-      "function ${1:${TM_FILENAME_BASE}}() {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}",
-      ""
-    ],
-    "description": "Creates a React Functional Component with ES7 module system"
-  },
-
   "reactFunctionalComponent": {
     "prefix": "rfc",
     "body": [
@@ -265,23 +246,6 @@
       ""
     ],
     "description": "Creates a React Functional Component with ES7 module system"
-  },
-
-  "reactArrowFunctionComponent": {
-    "prefix": "rafc",
-    "body": [
-      "import React from 'react'",
-      "",
-      "export const ${1:${TM_FILENAME_BASE}} = () => {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      ""
-    ],
-    "description": "Creates a React Arrow Function Component with ES7 module system"
   },
 
   "createContext": {
@@ -469,40 +433,7 @@
       ""
     ]
   },
-  "reactNativeFunctionalComponent": {
-    "prefix": "rnf",
-    "body": [
-      "import React from 'react'",
-      "import { View, Text } from 'react-native'",
-      "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
-      "\treturn (",
-      "\t\t<View>",
-      "\t\t\t<Text>$0</Text>",
-      "\t\t</View>",
-      "\t)",
-      "}",
-      ""
-    ]
-  },
-  "reactNativeFunctionalComponentWithStyles": {
-    "prefix": "rnfs",
-    "body": [
-      "import React from 'react'",
-      "import { StyleSheet, Text, View } from 'react-native'",
-      "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
-      "\treturn (",
-      "\t\t<View>",
-      "\t\t\t<Text>$0</Text>",
-      "\t\t</View>",
-      "\t)",
-      "}",
-      "",
-      "const styles = StyleSheet.create({})",
-      ""
-    ]
-  },
+
   "reactNativeImport": {
     "prefix": "imrn",
     "body": "import { ${1:moduleName} } from 'react-native'"

@@ -1,6 +1,6 @@
 {
   "typeScriptReactFunctionalExportComponent": {
-    "prefix": "tsrfce",
+    "prefix": "rfce",
     "body": [
       "import React from 'react'",
       "",
@@ -23,7 +23,7 @@
   },
 
   "typeScriptReactArrowFunctionComponent": {
-    "prefix": "tsrafc",
+    "prefix": "rafc",
     "body": [
       "import React from 'react'",
       "",
@@ -44,7 +44,7 @@
   },
 
   "typescriptReactNativeArrowFunctionComponent": {
-    "prefix": "tsrnf",
+    "prefix": "rnf",
     "body": [
       "import React from 'react'",
       "import { View, Text } from 'react-native'",
@@ -67,7 +67,7 @@
     "description": "Creates a React Native Arrow Function Component with ES7 module system and TypeScript interface"
   },
   "typescriptReactNativeArrowFunctionComponentNamedProps": {
-    "prefix": "tsrnfi",
+    "prefix": "rnfi",
     "body": [
       "import React from 'react'",
       "import { View } from 'react-native'",
@@ -90,7 +90,7 @@
     "description": "Creates a React Native Arrow Function Component with ES7 module system and named TypeScript interface"
   },
   "typescriptReactNativeArrowFunctionComponentWithStyles": {
-    "prefix": "tsrnfs",
+    "prefix": "rnfs",
     "body": [
       "import React from 'react'",
       "import { StyleSheet, Text, View } from 'react-native'",
@@ -121,5 +121,19 @@
   "Export type": {
     "prefix": "exptp",
     "body": ["export type ${1:${TM_FILENAME_BASE}} = {$0}"]
+  },
+
+  "formikHook": {
+    "prefix": "useFormik",
+    "body": [
+      "const ${1:form} = useFormik<any>({",
+      "\tinitialValues: {} as any",
+      "\tvalidateOnChange: false,",
+      "\tvalidateOnBlur: false,",
+      "\tvalidationSchema: ${2},",
+      "\tonSubmit: (values) => {},",
+      "/>"
+    ],
+    "description": "Creates useFormik "
   }
 }

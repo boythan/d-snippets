@@ -2,15 +2,22 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deactivate = exports.activate = void 0;
 const vscode = require("vscode");
-const jsSnippets = require("../snippets/snippets.json");
+const snippets = require("../snippets/snippets.json");
 const tsSnippets = require("../snippets/ts-snippets.json");
+const jsSnippets = require("../snippets/js-snippets.json");
+const dCompSnippets = require("../snippets/d-component-snippets.json");
 const convertSnippetArrayToString = (snippetArray) => snippetArray.join("\n");
 function activate(context) {
     const { commands: { registerCommand }, window: { showQuickPick, activeTextEditor }, } = vscode;
     const disposable = registerCommand("extension.dSnippetSearch", async () => {
-        const javascriptSnippets = Object.entries(jsSnippets);
+        const reactSnippets = Object.entries(snippets);
         const typescriptSnippets = Object.entries(tsSnippets);
-        const snippetsArray = javascriptSnippets.concat(typescriptSnippets);
+        const javascriptSnippets = Object.entries(jsSnippets);
+        const dComponentSnippets = Object.entries(dCompSnippets);
+        const snippetsArray = reactSnippets
+            .concat(typescriptSnippets)
+            .concat(dComponentSnippets)
+            .concat(javascriptSnippets);
         const items = snippetsArray.map(([shortDescription, { prefix, body, description }], index) => {
             const value = typeof prefix === "string" ? prefix : prefix[0];
             return {
