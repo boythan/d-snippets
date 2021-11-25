@@ -105,6 +105,19 @@
     "description": "Creates list component in d-component-library"
   },
 
+  "radioGroupComponent": {
+    "prefix": "dragr",
+    "body": [
+      "<RadioGroup",
+      "\tnumberOfColumns='${1:3}'",
+      "\tdataSource={$2}",
+      "\tlabel={Messages.$3}",
+      "\tclassName={$4}",
+      "/>"
+    ],
+    "description": "Creates Radio group component in d-component-library"
+  },
+
   "modalClassExportDefault": {
     "prefix": "dmoed",
     "body": [
