@@ -2,7 +2,7 @@
   "name": "d-snippets",
   "displayName": "d-snippets",
   "description": "React's snippet",
-  "version": "0.0.10",
+  "version": "0.0.23",
   "publisher": "vinhdxk57",
   "engines": {
     "vscode": "^1.62.0"
@@ -86,7 +86,8 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vs:prepublish": "npm run compile",
+    "vs:publish": "vsce package && vsce publish",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",

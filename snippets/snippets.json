@@ -50,17 +50,18 @@
   "exportDefaultNamedFunction": {
     "prefix": "ednf",
     "body": [
-      "export default function ${1:functionName}(${2:params}) {",
+      "export default const ${1:functionName} = (${2:params}) => {",
       "\t$0",
       "}",
       ""
     ],
     "description": "Export default named function in ES7 syntax"
   },
-  "method": {
-    "prefix": "met",
-    "body": ["${1:methodName} = (${2:params}) => {", "\t${0}", "}", ""],
-    "description": "Creates a method inside a class in ES7 syntax"
+
+  "namedFunction": {
+    "prefix": "nfn",
+    "body": ["const ${1:name} = (${2:params}) => {", "\t${3}", "}", ""],
+    "description": "Creates a named function in ES7 syntax"
   },
 
   "forEach": {
@@ -74,17 +75,13 @@
     "body": ["for(let ${1:item} of ${2:object}) {", "\t${0}", "}", ""],
     "description": "Iterating over property names of iterable objects"
   },
+
   "forIn": {
     "prefix": "fin",
     "body": ["for(let ${1:item} in ${2:object}) {", "\t${0}", "}", ""],
     "description": "Iterating over property values of iterable objects"
   },
 
-  "namedFunction": {
-    "prefix": "nfn",
-    "body": ["const ${1:name} = (${2:params}) => {", "\t${3}", "}", ""],
-    "description": "Creates a named function in ES7 syntax"
-  },
   "destructingObject": {
     "prefix": "dob",
     "body": "const {${2:propertyName}} = ${1:objectToDestruct}",
@@ -467,6 +464,16 @@
       ")(${1:${TM_FILENAME_BASE}})"
     ]
   },
+  "graphQlFragment": {
+    "prefix": "gqlfrag",
+    "body": [
+      "export const F_INVENTORY_LOG = gql`",
+      "\tfragment F_INVENTORY_LOG on InventoryLogs {",
+      "\t\t$1",
+      "\t}",
+      "`;"
+    ]
+  },
 
   "useState": {
     "prefix": "useState",
@@ -577,11 +584,11 @@
 
   "divTag": {
     "prefix": "div",
-    "body": ["<div className={'${1}'}>{${0}}</div>"]
+    "body": ["<div className='${1}'>{${0}}</div>"]
   },
 
   "textTag": {
     "prefix": "text",
-    "body": ["<text className={'${1}'}>{${0}}</text>"]
+    "body": ["<text className='${1}'>{${0}}</text>"]
   }
 }

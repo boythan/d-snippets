@@ -3,10 +3,11 @@
     "prefix": "ds",
     "body": [
       "<Select",
-      "\tclassName='$0'",
-      "\tvalue={}",
-      "\terror={}",
-      "\tonChange={(valueId)=>{}}",
+      "\tclassName='$1'",
+      "\tvalue={$2}",
+      "\terror={$3}",
+      "\tdataSource={$4}",
+      "\tonChange={(valueId)=>{$4}}",
       "/>"
     ],
     "description": "Creates select component in d-component-library"
@@ -16,11 +17,11 @@
     "prefix": "dit",
     "body": [
       "<InputText",
-      "\tclassName='$0'",
-      "\tvalue={}",
-      "\terror={}",
-      "\tname=''",
-      "\tonChange={(valueId)=>{}}",
+      "\tclassName='$1'",
+      "\tvalue={$2}",
+      "\terror={$3}",
+      "\tname='$4'",
+      "\tonChange={(valueId)=>{$5}}",
       "/>"
     ],
     "description": "Creates input component in d-component-library"
@@ -30,8 +31,8 @@
     "prefix": "dbt",
     "body": [
       "<Button>",
-      "\tvariation='${0:primary}'",
-      "\tonClick={()=>{}}",
+      "\tvariation='${1:primary}'",
+      "\tonClick={()=>{$2}}",
       "</Button>"
     ],
     "description": "Creates button component in d-component-library"
@@ -41,10 +42,91 @@
     "prefix": "dpr",
     "body": [
       "Progress.show(",
-      "\t{ method: $0, params: [${1:input}] },",
-      "\t(res: any) => {}",
+      "\t{ method: $1, params: [${2:input}] },",
+      "\t(res: any) => {$3}",
       ");"
     ],
     "description": "Creates progress component in d-component-library"
+  },
+
+  "tableComponent": {
+    "prefix": "dta",
+    "body": [
+      "<AwesomeTableComponent",
+      "\tref={(ref) => {",
+      "\t\tactivityList.current = ref;",
+      "\t}}",
+      "\tsource={source}",
+      "\tcolumns={columns}",
+      "\ttransformer={transformer}",
+      "/>"
+    ],
+    "description": "Creates table component in d-component-library"
+  },
+
+  "tableColumnComponent": {
+    "prefix": "dtaco",
+    "body": [
+      "const columns: IColumnsProps = [",
+      "\t{",
+      "\t\ttitle: Messages.${1},",
+      "\t\tdataIndex: '${2}',",
+      "\t\trender: (${2}) => (${3})",
+      "\t},",
+      "]"
+    ],
+    "description": "Creates table column list in table in d-component-library"
+  },
+
+  "tableColumnItem": {
+    "prefix": "dtacoit",
+    "body": [
+      "{",
+      "\ttitle: Messages.${1},",
+      "\tdataIndex: '${2}',",
+      "\trender: (${2}) => (${3})",
+      "},"
+    ],
+    "description": "Creates table column object in table in d-component-library"
+  },
+
+  "listComponent": {
+    "prefix": "dli",
+    "body": [
+      "<AwesomeListComponent",
+      "\tref={(ref) => {",
+      "\t\tactivityList.current = ref;",
+      "\t}}",
+      "\tsource={source}",
+      "\ttransformer={transformer}",
+      "\renderItem={renderItem}",
+      "/>"
+    ],
+    "description": "Creates list component in d-component-library"
+  },
+
+  "modalClassExportDefault": {
+    "prefix": "dmoed",
+    "body": [
+      "import React from 'react'",
+      "import { Modal } from 'd-react-components';",
+      "",
+      "interface I${1:${TM_FILENAME_BASE}} {",
+      "\topen: boolean;",
+      "\tonClose:()=> void;",
+      "}",
+      "",
+      "function ${1:${TM_FILENAME_BASE}}({open, onClose}: I${TM_FILENAME_BASE}) {",
+      "\treturn (",
+      "\t\t<Modal open={open} onClose={onClose} title={$2} onSave={()=>{}}>",
+      "\t\t\t<div>$0</div>",
+      "\t\t</Modal>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Functional Modal Component"
   }
 }

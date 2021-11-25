@@ -80,5 +80,44 @@
       "/>"
     ],
     "description": "Creates useFormik "
+  },
+
+  "graphQLQuery": {
+    "prefix": "gqlquery",
+    "body": [
+      "${1:queryFuncName}: (${2: params}) =>",
+      "\tAPI.query({",
+      "\t\tquery: gql`",
+      "\t\t\tquery ${3:queryName}($${4:queryParam}:${5:queryParamType}) {",
+      "\t\t\t\t${3:queryName}(${4:queryParam}: $${4:queryParam}) {",
+      "\t\t\t\t\t$6",
+      "\t\t\t\t}",
+      "\t\t\t}",
+      "\t\t`,",
+      "\t\tvariables: { ${2: params} }",
+      "\t}),"
+    ]
+  },
+
+  "graphQLMutation": {
+    "prefix": "gqlmutate",
+    "body": [
+      "${1:mutationFuncName}: (${2: params}) =>",
+      "\tAPI.mutate({",
+      "\tmutation: gql`",
+      "\t\tmutation ${3:mutationName}($${4:param}:${5:paramType}) {",
+      "\t\t\t\t${43:mutationName}(${4:param}: $${4:param}) {",
+      "\t\t\t\t\t$5",
+      "\t\t\t\t}",
+      "\t\t\t}",
+      "\t\t`,",
+      "\t\tvariables: { ${2: params} }",
+      "\t}),"
+    ]
+  },
+
+  "graphQLDelete": {
+    "prefix": "gqldelete",
+    "body": ["delete: (id) => API.delete('$1', id),"]
   }
 }
