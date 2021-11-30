@@ -7,7 +7,7 @@
       "\tvalue={$2}",
       "\terror={$3}",
       "\tdataSource={$4}",
-      "\tonChange={(valueId)=>{$4}}",
+      "\tonChange={(valueId)=>{$5}}",
       "/>"
     ],
     "description": "Creates select component in d-component-library"
@@ -30,12 +30,56 @@
   "buttonComponent": {
     "prefix": "dbt",
     "body": [
-      "<Button>",
-      "\tvariation='${1:primary}'",
-      "\tonClick={()=>{$2}}",
+      "<Button",
+      "\tonClick={()=>{$1}}",
+      "\tclassName='${2}'",
+      ">",
+      "\t\t{$3}",
       "</Button>"
     ],
     "description": "Creates button component in d-component-library"
+  },
+
+  "checkboxComponent": {
+    "prefix": "dch",
+    "body": [
+      "<Checkbox",
+      "\tchecked={$1}",
+      "\tonChange={() =>{$2}}",
+      "\tlabel={Messages.$3}",
+      "\tclassName='$4'",
+      "/>"
+    ],
+    "description": "Creates button component in d-component-library"
+  },
+
+  "checkboxGroupComponent": {
+    "prefix": "dchgr",
+    "body": [
+      "<CheckboxGroup",
+      "\tnumberOfColumns='${1:3}'",
+      "\tdataSource={$2}",
+      "\tlabel={Messages.$3}",
+      "\tclassName=`{$4}`",
+      "\tvalue={$5}",
+      "\tonChange={(value) =>{$6}}",
+      "/>"
+    ],
+    "description": "Creates Checkbox group component in d-component-library"
+  },
+  "radioGroupComponent": {
+    "prefix": "dragr",
+    "body": [
+      "<RadioGroup",
+      "\tnumberOfColumns='${1:3}'",
+      "\tdataSource={$2}",
+      "\tlabel={Messages.$3}",
+      "\tclassName=`{$4}`",
+      "\tvalue={$5}",
+      "\tonChange={(value) =>{$6}}",
+      "/>"
+    ],
+    "description": "Creates Radio group component in d-component-library"
   },
 
   "progressComponent": {
@@ -54,11 +98,12 @@
     "body": [
       "<AwesomeTableComponent",
       "\tref={(ref) => {",
-      "\t\tactivityList.current = ref;",
+      "\t\t${1:tableRef}.current = ref;",
       "\t}}",
-      "\tsource={source}",
       "\tcolumns={columns}",
-      "\ttransformer={transformer}",
+      "\tsource={${2:source}}",
+      "\ttransformer={${3:transformer}}",
+      "\tclassName='$4'",
       "/>"
     ],
     "description": "Creates table component in d-component-library"
@@ -103,19 +148,6 @@
       "/>"
     ],
     "description": "Creates list component in d-component-library"
-  },
-
-  "radioGroupComponent": {
-    "prefix": "dragr",
-    "body": [
-      "<RadioGroup",
-      "\tnumberOfColumns='${1:3}'",
-      "\tdataSource={$2}",
-      "\tlabel={Messages.$3}",
-      "\tclassName={$4}",
-      "/>"
-    ],
-    "description": "Creates Radio group component in d-component-library"
   },
 
   "modalClassExportDefault": {

@@ -21,63 +21,47 @@
   },
 
   "exportDefault": {
-    "prefix": "exp",
+    "prefix": "ed",
     "body": "export default $1$0"
   },
-  "exportDestructing": {
-    "prefix": "exd",
-    "body": "export { $2 } from '${1:module}'$0"
-  },
-  "exportAs": {
-    "prefix": "exa",
-    "body": "export { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
-  },
-  "exportNamedFunction": {
-    "prefix": "enf",
+
+  "exportArrowFunction": {
+    "prefix": "eaf",
     "body": [
       "export const ${1:functionName} = (${2:params}) => {",
       "\t$0",
       "}",
       ""
     ],
-    "description": "Export named function in ES7 syntax"
+    "description": "Export arrow function in ES7 syntax"
   },
+
   "exportDefaultFunction": {
-    "prefix": "edf",
+    "prefix": "edaf",
     "body": ["export default (${1:params}) => {", "\t$0", "}", ""],
     "description": "Export default function in ES7 syntax"
   },
-  "exportDefaultNamedFunction": {
-    "prefix": "ednf",
-    "body": [
-      "export default const ${1:functionName} = (${2:params}) => {",
-      "\t$0",
-      "}",
-      ""
-    ],
-    "description": "Export default named function in ES7 syntax"
-  },
 
-  "namedFunction": {
-    "prefix": "nfn",
+  "arrowFunction": {
+    "prefix": "af",
     "body": ["const ${1:name} = (${2:params}) => {", "\t${3}", "}", ""],
-    "description": "Creates a named function in ES7 syntax"
+    "description": "Creates a arrow function in ES7 syntax"
   },
 
   "forEach": {
-    "prefix": "fre",
+    "prefix": "forEach",
     "body": ["forEach(${1:array},${2:currentItem} => {", "\t${0}", "})", ""],
     "description": "Creates a forEach statement in ES7 syntax"
   },
 
   "forOf": {
-    "prefix": "fof",
+    "prefix": "forOf",
     "body": ["for(let ${1:item} of ${2:object}) {", "\t${0}", "}", ""],
     "description": "Iterating over property names of iterable objects"
   },
 
   "forIn": {
-    "prefix": "fin",
+    "prefix": "forIn",
     "body": ["for(let ${1:item} in ${2:object}) {", "\t${0}", "}", ""],
     "description": "Iterating over property values of iterable objects"
   },
@@ -87,21 +71,25 @@
     "body": "const {${2:propertyName}} = ${1:objectToDestruct}",
     "description": "Creates and assigns a local variable using object destructing"
   },
+
   "destructingArray": {
     "prefix": "dar",
     "body": "const [${2:propertyName}] = ${1:arrayToDestruct}",
     "description": "Creates and assigns a local variable using array destructing"
   },
+
   "setInterval": {
     "prefix": "sti",
     "body": ["setInterval(() => {", "\t${2}", "}, ${0:intervalInms})", ""],
     "description": "Executes the given function at specified intervals in ES7 syntax"
   },
+
   "setTimeOut": {
     "prefix": "sto",
     "body": ["setTimeout(() => {", "\t${2}", "}, ${1:delayInms})", ""],
     "description": "Executes the given function after the specified delay in ES7 syntax"
   },
+
   "promise": {
     "prefix": "prom",
     "body": ["return new Promise((resolve, reject) => {", "\t${1}", "})", ""],
@@ -113,71 +101,85 @@
     "body": "console.assert(${1:expression}, ${2:object})",
     "description": "If the specified expression is false, the message is written to the console along with a stack trace"
   },
+
   "consoleClear": {
     "prefix": "ccl",
     "body": "console.clear()",
     "description": "Clears the console"
   },
+
   "consoleCount": {
     "prefix": "cco",
     "body": "console.count(${1:label})",
     "description": "Writes the the number of times that count() has been invoked at the same line and with the same label"
   },
+
   "consoleDir": {
     "prefix": "cdi",
     "body": "console.dir(${1:object})",
     "description": "Prints a JavaScript representation of the specified object"
   },
+
   "consoleError": {
     "prefix": "cer",
     "body": "console.error(${1:object})",
     "description": "Displays a message in the console and also includes a stack trace from where the method was called"
   },
+
   "consoleGroup": {
     "prefix": "cgr",
     "body": "console.group(\"${1:label}\")",
     "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
   },
+
   "consoleGroupEnd": {
     "prefix": "cge",
     "body": "console.groupEnd()",
     "description": "Closes out the corresponding console.group()."
   },
+
   "consoleLog": {
     "prefix": "clg",
     "body": "console.log(${1:object})",
     "description": "Displays a message in the console"
   },
+
   "consoleTrace": {
     "prefix": "ctr",
     "body": "console.trace(${1:object})",
     "description": "Prints a stack trace from the point where the method was called"
   },
+
   "consoleLogObject": {
     "prefix": "clo",
     "body": "console.log(`${1:object}`, ${1:object})",
     "description": "Logs property with name."
   },
+
   "consoleLogJson": {
     "prefix": "clj",
     "body": "console.log(`${1:object}`, JSON.stringify(${1:object}, null, 2))",
     "description": "Logs stringified JSON property with name."
   },
+
   "consoleTime": {
     "prefix": "ctm",
     "body": "console.time(`${1:object}`)",
     "description": "Console time wrapper"
   },
+
   "consoleTimeEnd": {
     "prefix": "cte",
     "body": "console.timeEnd(`${1:object}`)",
     "description": "Console time end wrapper"
   },
+
   "consoleWarn": {
     "prefix": "cwa",
     "body": "console.warn(${1:object})",
     "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
   },
+
   "consoleInfo": {
     "prefix": "cin",
     "body": "console.info(${1:object})",
@@ -187,81 +189,6 @@
   "import React": {
     "prefix": "imr",
     "body": ["import React from 'react'", ""]
-  },
-
-  "reactClassComponent": {
-    "prefix": "rcc",
-    "body": [
-      "import React, { Component } from 'react'",
-      "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
-      "\trender() {",
-      "\t\treturn (",
-      "\t\t\t<div>",
-      "\t\t\t\t$0",
-      "\t\t\t</div>",
-      "\t\t)",
-      "\t}",
-      "}",
-      ""
-    ],
-    "description": "Creates a React component class with ES7 module system"
-  },
-
-  "reactClassExportComponent": {
-    "prefix": "rce",
-    "body": [
-      "import React, { Component } from 'react'",
-      "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
-      "\trender() {",
-      "\t\treturn (",
-      "\t\t\t<div>",
-      "\t\t\t\t$0",
-      "\t\t\t</div>",
-      "\t\t)",
-      "\t}",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}",
-      ""
-    ],
-    "description": "Creates a React component class with ES7 module system"
-  },
-
-  "reactFunctionalComponent": {
-    "prefix": "rfc",
-    "body": [
-      "import React from 'react'",
-      "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      ""
-    ],
-    "description": "Creates a React Functional Component with ES7 module system"
-  },
-
-  "createContext": {
-    "prefix": "rcontext",
-    "body": ["const ${1:contextName} = React.createContext()", ""],
-    "description": "Create React context"
-  },
-
-  "createRef": {
-    "prefix": "cref",
-    "body": ["this.${1:refName}Ref = React.createRef()", ""],
-    "description": "Create ref statement used inside constructor"
-  },
-
-  "forwardRef": {
-    "prefix": "fref",
-    "body": ["const ref = React.createRef()", ""],
-    "description": "Forward ref statement used inside component"
   },
 
   "reactNativeComponent": {
@@ -302,6 +229,7 @@
       ""
     ]
   },
+
   "reactNativeComponentExport": {
     "prefix": "rnce",
     "body": [
@@ -457,13 +385,14 @@
   },
 
   "exportGraphQL": {
-    "prefix": "expgql",
+    "prefix": "egql",
     "body": [
       "export default compose(",
       "\tgraphql(${1:queryOrMutation}, { name: ${2:name} }),",
       ")(${1:${TM_FILENAME_BASE}})"
     ]
   },
+
   "graphQlFragment": {
     "prefix": "gqlfrag",
     "body": [
@@ -484,14 +413,7 @@
 
   "useEffect": {
     "prefix": "useEffect",
-    "body": [
-      "useEffect(() => {",
-      "\t${1:effect}",
-      "\treturn () => {",
-      "\t\t${2:cleanup}",
-      "\t}",
-      "}, [${3:input}])"
-    ]
+    "body": ["useEffect(() => {", "\t${1:effect}", "}, [${3:input}])"]
   },
 
   "useContext": {
@@ -584,7 +506,7 @@
 
   "divTag": {
     "prefix": "div",
-    "body": ["<div className='${1}'>{${0}}</div>"]
+    "body": ["<div className='${1}'>${0}</div>"]
   },
 
   "textTag": {

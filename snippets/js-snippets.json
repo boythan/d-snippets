@@ -1,24 +1,6 @@
 {
-  "reactFunctionalExportComponent": {
-    "prefix": "rfce",
-    "body": [
-      "import React from 'react'",
-      "",
-      "function ${1:${TM_FILENAME_BASE}}() {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}",
-      ""
-    ],
-    "description": "Creates a React Functional Component with ES7 module system"
-  },
   "reactArrowFunctionComponent": {
-    "prefix": "rafc",
+    "prefix": "reaf",
     "body": [
       "import React from 'react'",
       "",
@@ -33,6 +15,26 @@
     ],
     "description": "Creates a React Arrow Function Component with ES7 module system"
   },
+
+  "reactArrowFunctionExportDefaultComponent": {
+    "prefix": "rafed",
+    "body": [
+      "import React from 'react'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = ({$2}) => {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Functional Component with ES7 module system and TypeScript interface"
+  },
+
   "reactNativeFunctionalComponent": {
     "prefix": "rnf",
     "body": [
@@ -72,12 +74,12 @@
     "prefix": "useFormik",
     "body": [
       "const ${1:form} = useFormik({",
-      "\tinitialValues: {}",
+      "\tinitialValues: {},",
       "\tvalidateOnChange: false,",
       "\tvalidateOnBlur: false,",
       "\tvalidationSchema: ${2:schema},",
       "\tonSubmit: (values) => {},",
-      "/>"
+      "})"
     ],
     "description": "Creates useFormik "
   },

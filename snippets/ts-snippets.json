@@ -1,6 +1,6 @@
 {
   "typeScriptReactFunctionalExportComponent": {
-    "prefix": "rfce",
+    "prefix": "rafed",
     "body": [
       "import React from 'react'",
       "",
@@ -8,7 +8,7 @@
       "\t",
       "}",
       "",
-      "function ${1:${TM_FILENAME_BASE}}({}: I${1/(.*)/${1:/capitalize}/}) {",
+      "const ${1:${TM_FILENAME_BASE}} = ({}: I${1/(.*)/${1:/capitalize}/}) => {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t$0",
@@ -23,17 +23,15 @@
   },
 
   "typeScriptReactArrowFunctionComponent": {
-    "prefix": "rafc",
+    "prefix": "reaf",
     "body": [
-      "import React from 'react'",
-      "",
-      "interface Props {",
-      "\t",
+      "interface I${1:${TM_FILENAME_BASE}} {",
+      "\t$3",
       "}",
       "",
-      "export const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+      "export const ${1:${TM_FILENAME_BASE}} = ({$2}: I${1:${TM_FILENAME_BASE}}) => {",
       "\treturn (",
-      "\t\t<div>",
+      "\t\t<div className='$4'>",
       "\t\t\t$0",
       "\t\t</div>",
       "\t)",
@@ -123,12 +121,12 @@
     "prefix": "useFormik",
     "body": [
       "const ${1:form} = useFormik<any>({",
-      "\tinitialValues: {} as any",
+      "\tinitialValues: {} as any,",
       "\tvalidateOnChange: false,",
       "\tvalidateOnBlur: false,",
       "\tvalidationSchema: ${2:schema},",
-      "\tonSubmit: (values) => {},",
-      "/>"
+      "\tonSubmit: (values:any) => {},",
+      "})"
     ],
     "description": "Creates useFormik "
   },
