@@ -10,7 +10,7 @@
       "",
       "const ${1:${TM_FILENAME_BASE}} = ({}: I${1/(.*)/${1:/capitalize}/}) => {",
       "\treturn (",
-      "\t\t<div>",
+      "\t\t<div className='$3'>",
       "\t\t\t$0",
       "\t\t</div>",
       "\t)",

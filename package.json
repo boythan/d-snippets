@@ -2,7 +2,7 @@
   "name": "d-snippets",
   "displayName": "d-snippets",
   "description": "React's snippet",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "publisher": "vinhdxk57",
   "engines": {
     "vscode": "^1.62.0"

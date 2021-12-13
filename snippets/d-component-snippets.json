@@ -150,6 +150,30 @@
     "description": "Creates list component in d-component-library"
   },
 
+  "notificationError": {
+    "prefix": "dnoer",
+    "body": ["Notifications.showError(Messages.${1});"],
+    "description": "Creates notification error in d-component-library"
+  },
+
+  "notificationSuccess": {
+    "prefix": "dnosu",
+    "body": ["Notifications.showSuccess(Messages.${1});"],
+    "description": "Creates notification success in d-component-library"
+  },
+
+  "notificationWarning": {
+    "prefix": "dnowa",
+    "body": ["Notifications.showWarning(Messages.${1});"],
+    "description": "Creates notification warning in d-component-library"
+  },
+
+  "notificationInfo": {
+    "prefix": "dnoin",
+    "body": ["Notifications.showInfo(Messages.${1});"],
+    "description": "Creates notification info in d-component-library"
+  },
+
   "modalClassExportDefault": {
     "prefix": "dmoed",
     "body": [
