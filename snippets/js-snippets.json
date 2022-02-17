@@ -79,7 +79,9 @@
       "\tvalidateOnBlur: false,",
       "\tvalidationSchema: ${2:schema},",
       "\tonSubmit: (values) => {},",
-      "})"
+      "})",
+      "const formValues = ${1:form}?.values;",
+      "const formErrors = ${1:form}?.errors;"
     ],
     "description": "Creates useFormik "
   },
